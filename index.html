@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Armon Naeni</title>
+    <meta name="og:image" content="background.jpeg"/>
+  </head>
+<body>
+<div class="mainImage">
+<img src="armon_body.png" alt="Armon" class="under" id="armonBody">
+<img src="armon_hair.png" alt="Armon" class="over" id="hair">
+</div>
+
+<div class="copy">
+
+  <div class="slidecontainer">
+    <input type="range" width="100px" min="1" max="100" value="50" class="slider" id="hairSlider" >
+  
+  </div>
+  <p><i>Slide to see my new hair color</i></p>
+  <!-- <p><i>"Fuck you Jinny"</i></p> -->
+  
+  <h1>Hi I'm Armon.</h1>
+
+  <p><i>"Where the FUCK is my kinect"</i></p>
+<p><i>"Say less."</i></p>
+<p><i>"Oh my god."</i></p>
+<p><i>"110%."</i></p>
+
+  <p>I'm a creative technologist based in Brooklyn who absolutely positively loves the following</p>
+  <li>Touchdesigner.</li>
+  <li>My cat Torta (Total bitch.)</li>
+  <li>Kinects.</li>
+  <li>Puffbars.</li>
+  <li>Touchdesigner.</li>
+  <li>Pixels.</li>
+  <li>Touchdesigner.</li>
+  <li>A white claw surge.</li>
+  <li>A good piece of sushi.</li>
+  <li>Did I mention Touchdesigner.</li>
+  <li>Sake.</li>
+  <li>My friends.</li>
+  <li>Baton.</li>
+  <li>🥹<a href="https://www.instagram.com/tv/CcAtraxpDqN">Touchdesigner</a>🥹</li>
+  <p>Made with love by <a href="adnanaga.com">Adnan</a></p>
+</div>
+
+
+</body>
+
+<style>
+
+  html body {
+    width:100%;
+  }
+
+  .Title {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  li {
+    text-align: center;
+  }
+  
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.slidecontainer {
+  width:100%;
+position: absolute;
+left: calc(50% - 62px);
+  margin:0 auto;
+}
+
+.mainImage {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.under {
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  z-index: -1;
+}
+
+.over {
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  z-index: -1;
+}
+
+.copy {
+  height: 100%;
+  width:100%;
+position: absolute;
+top: 65%;
+}
+
+</style>
+<script>
+
+let armonBody =  document.getElementById("armonBody")
+  let hairImage =  document.getElementById("hair")
+  armonBody.style.left = `${(window.innerWidth-448)/2}px`;
+  hairImage.style.left = `${(window.innerWidth-448)/2}px`;
+
+
+  var slider = document.getElementById("hairSlider");
+
+  document.getElementById('hairSlider').addEventListener('input',function() {
+  this.setAttribute('value',this.value);
+  console.log((this.value*360)/100)
+  document.getElementById("hair").style.filter = `hue-rotate(${(this.value*360)/100}deg) saturate(300%)`;
+});
+
+function resize() {
+  let armonBody =  document.getElementById("armonBody")
+  let hairImage =  document.getElementById("hair")
+  armonBody.style.left = `${(window.innerWidth-armonBody.width)/2}px`;
+  hairImage.style.left = `${(window.innerWidth-hairImage.width)/2}px`;
+
+}
+
+window.onresize = resize;
+
+</script>
+</html>
+
