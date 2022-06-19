@@ -10,7 +10,7 @@
 <img src="armon_hair.png" alt="Armon" class="over" id="hair">
 </div>
 
-<div class="copy">
+<div class="copy" id="copyText">
 
   <div class="slidecontainer">
     <input type="range" width="100px" min="1" max="100" value="50" class="slider" id="hairSlider" >
@@ -115,8 +115,10 @@ top: 65%;
 
 let armonBody =  document.getElementById("armonBody")
   let hairImage =  document.getElementById("hair")
+  let copyText =  document.getElementById("copyText")
   armonBody.style.left = `${(window.innerWidth-448)/2}px`;
   hairImage.style.left = `${(window.innerWidth-448)/2}px`;
+  copyText.style.top = `${(557)}px`;
 
 
   var slider = document.getElementById("hairSlider");
@@ -130,9 +132,10 @@ let armonBody =  document.getElementById("armonBody")
 function resize() {
   let armonBody =  document.getElementById("armonBody")
   let hairImage =  document.getElementById("hair")
+  let copyText =  document.getElementById("copyText")
   armonBody.style.left = `${(window.innerWidth-armonBody.width)/2}px`;
   hairImage.style.left = `${(window.innerWidth-hairImage.width)/2}px`;
-
+  copyText.style.top = `${(armonBody.height)}px`;
 }
 
 window.onresize = resize;
